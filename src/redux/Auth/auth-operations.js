@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import * as fetch from '../../components/fetch/FetchUser';
+import Notiflix from 'notiflix';
 
 export const signup = createAsyncThunk(
     "auth/signup",
@@ -8,6 +9,7 @@ export const signup = createAsyncThunk(
             const result = await fetch.signup(data);
             return result;
         } catch ({ response }) {
+            Notiflix.Notify.failure('invalid data format');
             const error = {
                 status: response.status,
                 message: response.data.message
