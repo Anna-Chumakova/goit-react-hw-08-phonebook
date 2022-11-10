@@ -6,9 +6,6 @@ import { useEffect } from "react";
 import { getLoadingUserStatus } from "redux/Auth/auth-selectors";
 import { current } from '../redux/Auth/auth-operations';
 
-
-
-
 export const App = () => {
 
   const dispatch = useDispatch();
