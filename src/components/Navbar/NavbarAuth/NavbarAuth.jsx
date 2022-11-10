@@ -8,7 +8,7 @@ export default function NavbarAuth() {
     return (
         <div className={styles.conteiner}>
             <NavLink className={ getClassName} to="/register">Register</NavLink>
-            <NavLink className={ getClassName} to="/login">Login</NavLink>
+            <NavLink className={ getClassName} to="/login">Log In</NavLink>
         </div>
     )
 }

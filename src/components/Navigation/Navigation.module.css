@@ -1,0 +1,12 @@
+.linkItem {
+    text-decoration: none;
+    color: black;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin-right: 5px;
+    
+}
+
+.linkItem:hover,
+.linkItem:focus {
+    color: blue;
+}
