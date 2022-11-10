@@ -1,9 +1,10 @@
 .linkItem {
     text-decoration: none;
-    color: black;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     margin-right: 5px;
-    
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(26, 56, 73);
 }
 
 .linkItem:hover,
