@@ -26,6 +26,7 @@ export const login = createAsyncThunk(
             const result = await fetch.login(data);
             return result;
         } catch ({ response }) {
+            Notiflix.Notify.failure('invalid data format');
             const error = {
                 status: response.status,
                 message: response.data.message
