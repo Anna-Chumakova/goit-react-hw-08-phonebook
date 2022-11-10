@@ -52,12 +52,14 @@ export const logout = createAsyncThunk(
 export const current = createAsyncThunk(
     "auth/current",
     async (_, { rejectWithValue, getState }) => {
-        
-    
-
+         const { auth } = getState();
+        const persistedToken = auth.token;
+        if (!persistedToken) {
+            return rejectWithValue();
+        }
         try {
-            const { auth } = getState();
-            const result = await fetch.getCurrentUser(auth.token);
+            
+            const result = await fetch.getCurrentUser(persistedToken);
             return result;
         }
         
