@@ -44,7 +44,7 @@ const Phonebook = () => {
                 <div>
                     <FormAddContact onSubmit={onAddContact} />
                     <h3>Find contacts by name</h3>
-                    <input type="text" name="filter" onChange={handleChange} value={filter} className={styles.filter} placeholder="Filter" />
+                    <input type="text" name="filter" onChange={handleChange} value={filter} className={styles.input} placeholder="Filter" />
                     {!loading && contacts.length > 0 && <ContactList items={contacts} removeContact={onRemoveContact} />}
                     {loading && <p>...loading</p>}
                     {error && <p>oops, something went wrong</p>}

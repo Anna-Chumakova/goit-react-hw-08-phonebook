@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { nanoid } from "nanoid";
-import propTypes from "prop-types"
+import propTypes from "prop-types";
+import styles from "./LoginForm.module.css";
 
 export default function LoginForm({ onSubmit }) {
     const [email, setEmail] = useState("");
@@ -29,28 +30,28 @@ export default function LoginForm({ onSubmit }) {
         setPassword("");
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={styles.form}>
             <div>
                 <label htmlFor={emailId}>Email: </label>
-                <input id={emailId} onChange={handleChange}
+                <input className={styles.input} id={emailId} onChange={handleChange}
                     label="User email"
                     name="email"
                     value={email}
                     type="email"
-                    placeholder="Enter user email"
+                    placeholder="email"
                     required={true} />
             </div>
             <div>
                 <label htmlFor={passwordId}>Password: </label>
-                <input id={passwordId} onChange={handleChange}
+                <input className={styles.input} id={passwordId} onChange={handleChange}
                     label="User password"
                     name="password"
                     value={password}
                     type="password"
-                    placeholder="Enter user password (min 6 symbols)"
+                    placeholder="password (min 6 symbols)"
                     required={true} />
             </div>
-            <button onCick={handleSubmit}>Login</button>
+            <button onClick={handleSubmit} className={styles.btn} >Login</button>
         </form>
     )
 }

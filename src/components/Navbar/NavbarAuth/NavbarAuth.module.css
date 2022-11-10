@@ -1,0 +1,25 @@
+.link{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    display: block;
+    padding: 4px 8px;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(26, 56, 73);
+}
+.link:hover,
+.link:focus {
+    color: blue;
+}
+.active {
+    border-bottom: 4px solid rgba(19, 18, 18, 0.418);
+}
+.conteiner {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 10px;
+ 
+    display: flex;
+    justify-content: center;
+}

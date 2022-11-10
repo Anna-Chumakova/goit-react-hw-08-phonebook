@@ -1,13 +1,13 @@
-import NavbarItems  from "./NavbarItems";
+import items  from "./NavbarItems";
 import { NavLink } from "react-router-dom";
-
+import styles from "../NavbarUserMenu/NavbarUserMenu.module.css"
 
 const NavbarMenu = () => {
-    const elements = NavbarItems.map(({ id, to, text }) => {
-        <li key={id}>
-            <NavLink to={to}>{text}</NavLink>
+    const elements = items.map(({ id, to, text }) => { return ( <li key={id} className={styles.link}>
+            <NavLink className={styles.linkItem} to={to}>{text}</NavLink>
 
-        </li>
+        </li>)
+       
     });
     return (
         <ul>{ elements}</ul>

@@ -6,10 +6,10 @@ import styles from "./FormAddContact.module.css";
 
 const FormAddContact = ({ onSubmit }) => {
     const [name, setName] = useState("");
-    const [phone, setPhone] = useState("");
+    const [number, setNumber] = useState("");
 
     const nameId = nanoid();
-    const phoneId = nanoid();
+    const numberId = nanoid();
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -17,8 +17,8 @@ const FormAddContact = ({ onSubmit }) => {
             case 'name':
                 setName(value);
                 break;
-            case 'phone':
-                setPhone(value);
+            case 'number':
+                setNumber(value);
                 break;
             default:
                 return;
@@ -26,9 +26,9 @@ const FormAddContact = ({ onSubmit }) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit({ name, phone });
+        onSubmit({ name, number });
         setName('');
-        setPhone('');
+        setNumber('');
     }
     return (
             <form onSubmit={handleSubmit}>
@@ -43,19 +43,19 @@ const FormAddContact = ({ onSubmit }) => {
                         id={nameId}
                         value={name}
                         onChange={handleChange}
-                        className="field"
+                        className={styles.input}
                         placeholder="Name"
                     />
                 </div>
                 <div className={styles.formGroup}>
-                    <label htmlFor={phoneId}>Phone:  </label>
+                    <label htmlFor={numberId}>Phone:  </label>
                     <input
-                        id={phoneId}
-                        name="phone"
-                        value={phone}
+                        id={numberId}
+                        name="number"
+                        value={number}
                         onChange={handleChange}
-                        className="field"
-                        placeholder="Phone"
+                        className={styles.input}
+                        placeholder="Number"
                         type="tel"
                         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"

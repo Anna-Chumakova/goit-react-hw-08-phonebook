@@ -1,9 +1,8 @@
 import { nanoid } from "nanoid";
 
-const items = [{
+ const items = [{
     id: nanoid(),
-    to: "/my-contacts",
+    to: "/contacts",
     text: "Contacts"
 }];
-
 export default items;

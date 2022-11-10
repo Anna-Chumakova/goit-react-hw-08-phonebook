@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { nanoid } from "nanoid";
-import propTypes from "prop-types"
+import propTypes from "prop-types";
+import styles from "../LoginForm/LoginForm.module.css";
 
 export default function RegisterForm({ onSubmit }) {
     const [name, setName] = useState("");
@@ -36,37 +37,37 @@ export default function RegisterForm({ onSubmit }) {
     }
     return (
         <form onSubmit={handleSubmit}>
-            <div>
+            <div className={styles.container}>
                 <label htmlFor={nameId}>Name: </label>
-                <input id={nameId} onChange={handleChange}
+                <input className={styles.input} id={nameId} onChange={handleChange}
                     name="name"
                     value={name}
                     type="text"
                     label="User name"
-                    placeholder="Enter user name"
+                    placeholder="name"
                     required={true} />
             </div>
             <div>
                 <label htmlFor={emailId}>Email: </label>
-                <input id={emailId} onChange={handleChange}
+                <input className={styles.input} id={emailId} onChange={handleChange}
                     label="User email"
                     name="email"
                     value={email}
                     type="email"
-                    placeholder="Enter user email"
+                    placeholder="email"
                     required={true} />
             </div>
             <div>
                 <label htmlFor={passwordId}>Password: </label>
-                <input id={passwordId} onChange={handleChange}
+                <input className={styles.input} id={passwordId} onChange={handleChange}
                     label="User password"
                     name="password"
                     value={password}
                     type="password"
-                    placeholder="Enter user password (min 6 symbols)"
+                    placeholder="password (min 6 symbols)"
                     required={true} />
             </div>
-            <button onClick={handleSubmit}>Login</button>
+            <button onClick={handleSubmit} className={styles.btn} >Login</button>
         </form>
     )
 }

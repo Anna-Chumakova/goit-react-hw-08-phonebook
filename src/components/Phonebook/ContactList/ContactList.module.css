@@ -5,14 +5,15 @@
 .item {
     margin-bottom: 15px;
     display: flex;
-    align-items: center;
+    align-items: baseline;
 }
 
 .remove {
-    color: black;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
+    
     margin-left: 15px;
     cursor: pointer;
+}
+.remove:focus,
+.remove:hover {
+    color:blue;
 }

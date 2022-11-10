@@ -1,18 +1,19 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "https://connections-api.herokuapp.com/",
+    baseURL: "https://connections-api.herokuapp.com"
 });
 
 const setToken = (token) => {
+    console.log(token);
     if (token) {
         return instance.defaults.headers.common.authorization = `Bearer ${token}`;
     }
-    return instance.defaults.headers.common.authorization = "";
+    instance.defaults.headers.common.authorization = "";
 }
 
 export const signup = async (signupData) => {
-    const { data } = await instance.post("/users/signup", signupData);
+    const { data } = await instance.post('/users/signup', signupData);
     instance.defaults.headers.common.authorization = `Bearer ${data.token}`;
     return data;
 }

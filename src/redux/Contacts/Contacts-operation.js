@@ -3,12 +3,12 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import Notiflix from "notiflix";
 
 
-export const isDublicate = ({name, phone}, contacts) => {
+export const isDublicate = ({name, number}, contacts) => {
     const normalizedName = name.toLowerCase();
-    const normalizedPhone = phone.toLowerCase();
+    const normalizedPhone = number.toLowerCase();
 
     const result = contacts.find(item => {
-        return (normalizedName === item.name.toLowerCase() && normalizedPhone === item.phone.toLowerCase())
+        return (normalizedName === item.name.toLowerCase() && normalizedPhone === item.number.toLowerCase())
     });
     
     return Boolean(result);
@@ -34,6 +34,7 @@ export const addContact = createAsyncThunk(
         try {
             const result = await fetch.addContact(data);
             return result;
+
         } catch (error) {
             return rejectWithValue(error);
         }

@@ -1,0 +1,9 @@
+.container {
+    width: 500px;
+    margin: 20px auto;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background: rgb(9, 73, 121);
+    background: linear-gradient(193deg, rgba(9, 73, 121, 0.4150035014005602) 49%, rgba(0, 255, 252, 0.49343487394957986) 100%);
+    padding: 20px;
+    border-radius: 10px;
+}

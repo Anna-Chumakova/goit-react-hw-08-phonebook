@@ -9,11 +9,20 @@
     margin-bottom: 35px;
 }
 .contactBlock {
-    background-color: aqua;
+    background: rgb(9, 73, 121);
+    background: linear-gradient(193deg, rgba(9, 73, 121, 0.4150035014005602) 49%, rgba(0, 255, 252, 0.49343487394957986) 100%);
     padding: 20px;
     border-radius: 10px;
 }
-.filter {
-    margin-bottom: 15px;
-    padding: 10px 15px;
+.input {
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+
+}
+
+.input:hover,
+.input:focus {
+    border-color: blue;
 }
